@@ -1,0 +1,26 @@
+# Render.com deployment config
+# Docs: https://render.com/docs/blueprint-spec
+#
+# After you push this repo to GitHub, go to:
+#   https://dashboard.render.com/blueprints
+# and connect your repo. Render will read this file and create the service.
+
+services:
+  - type: web
+    name: downflick
+    runtime: docker
+    plan: free            # bump to 'starter' if you need 512 MB+ RAM for 4K downloads
+    region: singapore     # change to your nearest region
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: NEXT_TELEMETRY_DISABLED
+        value: "1"
+      # Optional: set a custom yt-dlp path if you ever vendor a specific version
+      - key: YTDLP_PATH
+        value: yt-dlp

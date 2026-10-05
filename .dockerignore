@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.*
+
+# Build artifacts
+.next
+out
+dist
+build
+
+# Logs
+*.log
+dev.log
+server.log
+
+# Local databases
+db/*.db
+db/*.db-journal
+prisma/*.db
+prisma/*.db-journal
+
+# Runtime data
+.DS_Store
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+
+# Editor
+.vscode
+.idea
+*.swp
+
+# Sandbox-internal
+.zscripts
+api-tests
+skills
+examples
+mini-services
+tests
+upload
+download
